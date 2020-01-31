@@ -211,5 +211,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac01ea33826a695428b6e72a8eb68afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raycastDistance: 24
+  raycastDistance: 16
   checkingInterval: 0.25

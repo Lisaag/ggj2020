@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScreenFillRate : MonoBehaviour
 {
@@ -13,7 +14,6 @@ public class ScreenFillRate : MonoBehaviour
         StartCoroutine(CheckForFillRate());
     }
 
-    //this doesnt work
     private IEnumerator CheckForFillRate()
     {
         while (!completelyFilled)
@@ -29,7 +29,7 @@ public class ScreenFillRate : MonoBehaviour
             {
                 for (int x = 0; x < width; x++)
                 {
-                    if (!Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(x * width, y * width))))
+                    if (!Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(x * raycastDistance, y * raycastDistance))))
                     {
                         completelyFilled = false;
                     }
@@ -38,7 +38,8 @@ public class ScreenFillRate : MonoBehaviour
 
             if (completelyFilled)
             {
-                Debug.Log("wow its actually filled"); //finish game 
+                //temporary change.
+                SceneManager.LoadScene("New Scene");
             }
         }
     } 

@@ -17,8 +17,6 @@ public class DuplicateWindows : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(Screen.width + ", " + Screen.height);
-
         objects = new List<Transform>();
         for (int i = 0; i < objectPoolSize; i++)
         {
@@ -38,6 +36,7 @@ public class DuplicateWindows : MonoBehaviour
         }
     }
 
+    //de offset klopt niet helemaal, maar is goed genoeg voor nu. fix later wanneer belangrijkere dingen klaar zijn.
     private IEnumerator UpdatePrefabAvailability()
     {
         while (true)
@@ -60,8 +59,8 @@ public class DuplicateWindows : MonoBehaviour
                 {
                     objects[objectPoolSize - 1].position -= offset;
                 }
+
                 objects[currentIndex++].position = original.position + offset * 2;
-                //offset.z += 0.001f;
             }
         }
     }
