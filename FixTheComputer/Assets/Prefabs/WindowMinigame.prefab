@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 41888036118499632}
   - component: {fileID: 41888036118499635}
   - component: {fileID: 41888036118499634}
+  - component: {fileID: 649842260}
   m_Layer: 0
   m_Name: WindowMinigame
   m_TagString: Untagged
@@ -213,3 +214,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raycastDistance: 16
   checkingInterval: 0.25
+--- !u!114 &649842260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41888036118499645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dbb4bd71f87f924aa2e14fb433d5e75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startOnAwake: 1
+  time: 5
+  OnStartTimer:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 41888036118499635}
+        m_MethodName: StartMinigame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnObjectiveCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnObjectiveFailed:
+    m_PersistentCalls:
+      m_Calls: []
