@@ -1,0 +1,301 @@
+fileFormatVersion: 2
+guid: 516af739cc4d88c49bb42664bccd0ea0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6070914178865387044
+    second: monster-hunter-world-monster-hunter-diary-poka-poka-airou-village-sticker-felyne-capcom-monster-hunter-thumbnail_0
+  - first:
+      213: -7493979739227323756
+    second: monster-hunter-world-monster-hunter-diary-poka-poka-airou-village-sticker-felyne-capcom-monster-hunter-thumbnail_1
+  - first:
+      213: 5741343916315719769
+    second: monster-hunter-world-monster-hunter-diary-poka-poka-airou-village-sticker-felyne-capcom-monster-hunter-thumbnail_2
+  - first:
+      213: -1368407294066011277
+    second: monster-hunter-world-monster-hunter-diary-poka-poka-airou-village-sticker-felyne-capcom-monster-hunter-thumbnail_3
+  - first:
+      213: 6164963618098044059
+    second: monster-hunter-world-monster-hunter-diary-poka-poka-airou-village-sticker-felyne-capcom-monster-hunter-thumbnail_4
+  - first:
+      213: -777671108187194752
+    second: monster-hunter-world-monster-hunter-diary-poka-poka-airou-village-sticker-felyne-capcom-monster-hunter-thumbnail_5
+  - first:
+      213: -8879343816937395987
+    second: monster-hunter-world-monster-hunter-diary-poka-poka-airou-village-sticker-felyne-capcom-monster-hunter-thumbnail_6
+  - first:
+      213: -673337520895421422
+    second: monster-hunter-world-monster-hunter-diary-poka-poka-airou-village-sticker-felyne-capcom-monster-hunter-thumbnail_7
+  - first:
+      213: 1913519673172543386
+    second: monster-hunter-world-monster-hunter-diary-poka-poka-airou-village-sticker-felyne-capcom-monster-hunter-thumbnail_8
+  - first:
+      213: -4518082926281210204
+    second: monster-hunter-world-monster-hunter-diary-poka-poka-airou-village-sticker-felyne-capcom-monster-hunter-thumbnail_9
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: monster-hunter-world-monster-hunter-diary-poka-poka-airou-village-sticker-felyne-capcom-monster-hunter-thumbnail_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 115
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4265725d748304450800000000000000
+      internalID: 6070914178865387044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster-hunter-world-monster-hunter-diary-poka-poka-airou-village-sticker-felyne-capcom-monster-hunter-thumbnail_1
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 115
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4928169c129000890800000000000000
+      internalID: -7493979739227323756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster-hunter-world-monster-hunter-diary-poka-poka-airou-village-sticker-felyne-capcom-monster-hunter-thumbnail_2
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 114
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95839597fd95daf40800000000000000
+      internalID: 5741343916315719769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster-hunter-world-monster-hunter-diary-poka-poka-airou-village-sticker-felyne-capcom-monster-hunter-thumbnail_3
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 115
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3735421f0d0720de0800000000000000
+      internalID: -1368407294066011277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster-hunter-world-monster-hunter-diary-poka-poka-airou-village-sticker-felyne-capcom-monster-hunter-thumbnail_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 53
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9cd0fd4fb95e8550800000000000000
+      internalID: 6164963618098044059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster-hunter-world-monster-hunter-diary-poka-poka-airou-village-sticker-felyne-capcom-monster-hunter-thumbnail_5
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 52
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08afa645f382535f0800000000000000
+      internalID: -777671108187194752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster-hunter-world-monster-hunter-diary-poka-poka-airou-village-sticker-felyne-capcom-monster-hunter-thumbnail_6
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 55
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de8a2e0e7db36c480800000000000000
+      internalID: -8879343816937395987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster-hunter-world-monster-hunter-diary-poka-poka-airou-village-sticker-felyne-capcom-monster-hunter-thumbnail_7
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 55
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 214161d9713d7a6f0800000000000000
+      internalID: -673337520895421422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 00c5318208eeb8a40a6ae55093349e56
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

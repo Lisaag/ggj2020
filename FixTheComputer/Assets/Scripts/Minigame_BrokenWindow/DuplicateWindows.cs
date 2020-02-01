@@ -13,9 +13,8 @@ public class DuplicateWindows : MonoBehaviour
 
     private Vector3 offset = new Vector3(0, 0, 0.001f);
 
-    public bool PlayingMinigame { get; set; } = true;
 
-    private void Start()
+    private void Awake()
     {
         objects = new List<Transform>();
         for (int i = 0; i < objectPoolSize; i++)
@@ -24,16 +23,11 @@ public class DuplicateWindows : MonoBehaviour
             go.SetActive(false);
             objects.Add(go.transform);
         }
-
-        StartCoroutine(UpdatePrefabAvailability());
     }
 
-    private void Update()
+    public void StartMinigame()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            PlayingMinigame = !PlayingMinigame;
-        }
+        StartCoroutine(UpdatePrefabAvailability());
     }
 
     //de offset klopt niet helemaal, maar is goed genoeg voor nu. fix later wanneer belangrijkere dingen klaar zijn.
@@ -43,25 +37,22 @@ public class DuplicateWindows : MonoBehaviour
         {
             yield return new WaitForSeconds(refreshTime);
 
-            if (PlayingMinigame)
+            if (currentIndex >= objectPoolSize)
             {
-                if (currentIndex >= objectPoolSize)
-                {
-                    currentIndex = 0;
-                }
-
-                objects[currentIndex].gameObject.SetActive(true);
-                if (currentIndex - 1 >= 0)
-                {
-                    objects[currentIndex - 1].position -= offset;
-                }
-                else
-                {
-                    objects[objectPoolSize - 1].position -= offset;
-                }
-
-                objects[currentIndex++].position = original.position + offset * 2;
+                currentIndex = 0;
             }
+
+            objects[currentIndex].gameObject.SetActive(true);
+            if (currentIndex - 1 >= 0)
+            {
+                objects[currentIndex - 1].position -= offset;
+            }
+            else
+            {
+                objects[objectPoolSize - 1].position -= offset;
+            }
+
+            objects[currentIndex++].position = original.position + offset * 2;
         }
     }
 }
