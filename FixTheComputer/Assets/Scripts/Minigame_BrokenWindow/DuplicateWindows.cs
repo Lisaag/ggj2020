@@ -13,7 +13,7 @@ public class DuplicateWindows : MonoBehaviour
     private List<Transform> objects;
     private int currentIndex = 0;
 
-    private Vector3 offset = new Vector3(0, 0, 0.001f);
+    private Vector3 offset = new Vector3(0, 0, 0.05f);
 
 
     private void Awake()

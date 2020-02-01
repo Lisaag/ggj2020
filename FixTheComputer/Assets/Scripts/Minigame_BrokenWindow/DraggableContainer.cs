@@ -5,6 +5,7 @@ public class DraggableContainer : MonoBehaviour
 {
     [SerializeField] private bool requireButtonPress;
 
+    private TrailRenderer trailRenderer;
     private AudioSource audioSource;
     private BoxCollider boxCollider;
 
@@ -19,6 +20,12 @@ public class DraggableContainer : MonoBehaviour
 
     private void Start()
     {
+        trailRenderer = GetComponent<TrailRenderer>();
+        if (trailRenderer)
+        {
+            trailRenderer.widthMultiplier = 2.5f;
+        }
+
         audioSource = GetComponent<AudioSource>();
         boxCollider = GetComponent<BoxCollider>();
 
@@ -62,6 +69,7 @@ public class DraggableContainer : MonoBehaviour
             {
                 Vector3 newScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
                 Vector3 newPosition = Camera.main.ScreenToWorldPoint(newScreenPoint);
+
                 transform.position = newPosition;
             }
         }
