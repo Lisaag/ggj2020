@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LetterBehaviour : MonoBehaviour
@@ -64,6 +65,8 @@ public class LetterBehaviour : MonoBehaviour
                 {
                     Debug.Log("WRONG");
                 }
+                //Add the right scene SceneManager.LoadScene("PostitMinigame");
+
                 Debug.Log("Going back");
                 //TODO: Go back to main screen
             }
