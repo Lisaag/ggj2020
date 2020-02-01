@@ -21,11 +21,11 @@ public class ScreenFillRate : MonoBehaviour
         {
             case ScriptableManager.Difficulty.Easy:
                 //timer.PlayTime = 10f;
-                requiredFillRatio = 0.55f;
+                requiredFillRatio = 0.75f;
                 break;
             case ScriptableManager.Difficulty.Medium:
                 //timer.PlayTime = 7.5f;
-                requiredFillRatio = 0.75f;
+                requiredFillRatio = 0.85f;
                 break;
             case ScriptableManager.Difficulty.Hard:
                 //timer.PlayTime = 5f;
