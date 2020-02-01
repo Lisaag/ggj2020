@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6b617763151d14a499b305685cbaed30, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -95,13 +95,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9aea8d118737a547829b92718988aa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mailRectSize: {x: 70, y: 3}
-  hoverColor: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 1}
+  mailRectSize: {x: 55, y: 3}
+  hoverColor: {r: 0, g: 0, b: 0, a: 1}
   mailImage: {fileID: 7637816867546456291, guid: f1def15e9b5752a4aaeb86034a5b1c4e,
     type: 3}
   mailText: {fileID: 3383191044187527092, guid: c14160fd496d67843b8ffc1f9ae49a63,
     type: 3}
-  defaultColor: {r: 0.084905684, g: 0.08290319, b: 0.08290319, a: 1}
+  clickedColor: {r: 0, g: 0.3640998, b: 0.6415094, a: 1}
+  defaultColor: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 1}
+  mailIndex: 0
 --- !u!61 &43273613273990410
 BoxCollider2D:
   m_ObjectHideFlags: 0

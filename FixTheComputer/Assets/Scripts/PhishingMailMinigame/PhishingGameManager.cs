@@ -15,8 +15,12 @@ public class PhishingGameManager : MonoBehaviour
 
     public int points = 0;
 
+    [HideInInspector]
+    public GameObject[] deleteMails;
+
     void Start()
     {
+        deleteMails = new GameObject[mailAmount];
         CreateMails();
 
         this.points = 0;
@@ -28,17 +32,19 @@ public class PhishingGameManager : MonoBehaviour
         {
             GameObject mO = Instantiate(mailObject, this.transform);
             mO.GetComponent<MailSprite>().SetPosition(i);
+            mO.GetComponent<MailSprite>().mailIndex = i;
         }
     }
 
     public void CheckWin()
     {
-        Debug.Log("pressed!: " + points);
-
-        if (points == mailAmount)
+        if (points > 0)
         {
             StartCoroutine(mailTrashbin.Rainbow(0));
-            Debug.Log("Wajoooo gewonnen!!11");
+        }
+        else
+        {
+            mailTrashbin.resetBin();
         }
     }
 }

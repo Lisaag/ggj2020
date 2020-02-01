@@ -13,13 +13,15 @@ public class MailTrashbin : MonoBehaviour
     [SerializeField]
     float highlightSpeed;
 
+    [SerializeField]
+    PhishingGameManager phishingGameManager;
+
     private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.color = defaultColor;
-       // StartCoroutine(Rainbow(0));
     }
 
     void OnMouseOver()
@@ -29,6 +31,34 @@ public class MailTrashbin : MonoBehaviour
 
     void OnMouseExit()
     {
+        spriteRenderer.color = defaultColor;
+    }
+
+    void OnMouseDown()
+    {
+        GameObject[] o = phishingGameManager.deleteMails;
+        int amountRemoved = 0;
+        for(int i = 0; i < o.Length; i++)
+        {
+            if (o[i] == null)
+            {
+                amountRemoved++;
+                continue;
+            }
+            o[i].SetActive(false);
+        }
+
+        if (amountRemoved == 0)
+        {
+            Debug.Log("gewonnen jo");
+        }
+        phishingGameManager.points = 0;
+        resetBin();
+    }
+
+    public void resetBin()
+    {
+        StopAllCoroutines();
         spriteRenderer.color = defaultColor;
     }
 
