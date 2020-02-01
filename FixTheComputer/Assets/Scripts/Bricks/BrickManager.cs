@@ -8,12 +8,28 @@ public class BrickManager : MonoBehaviour
 
     public static BrickManager instance;
 
+    public GameObject easyBricks, mediumBricks, hardBricks;
+
+    public int lives = 10;
+
     private void Awake()
     {
         if (instance == null)
             instance = this;
         else
             Destroy(this);
+
+        /*switch (true)
+        {
+            case 0:
+                easyBricks.SetActive(true);
+                break;
+            case 1:
+                mediumBricks.SetActive(true);
+                break;
+            case 2:
+                hardBricks.SetActive(true);
+        }*/
     }
 
     // Update is called once per frame
@@ -28,6 +44,17 @@ public class BrickManager : MonoBehaviour
         {
             if (Bricks[i] == null)
                 Bricks.RemoveAt(i);
+        }
+
+        if (lives <= 0)
+        {
+            #if UNITY_EDITOR
+                        UnityEditor.EditorApplication.isPlaying = false;
+            #elif UNITY_WEBPLAYER
+                     Application.OpenURL(webplayerQuitURL);
+            #else
+                     Application.Quit();
+            #endif
         }
     }
 }

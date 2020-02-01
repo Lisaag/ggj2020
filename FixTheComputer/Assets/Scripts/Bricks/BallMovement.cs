@@ -37,5 +37,10 @@ public class BallMovement : MonoBehaviour
             other.gameObject.GetComponent<Brick>().RemoveLife();
             windowShake.Shake();
         }
+
+        if (other.gameObject.CompareTag("Bottom"))
+        {
+            BrickManager.instance.lives--;
+        }
     }
 }
