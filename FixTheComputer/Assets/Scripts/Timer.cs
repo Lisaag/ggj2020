@@ -20,6 +20,9 @@ public class Timer : MonoBehaviour
     [SerializeField] private UnityEvent OnObjectiveCompleted;
     [SerializeField] private UnityEvent OnObjectiveFailed;
 
+    private int flickerAmount = 5;
+    private float flickerTime = 0.5f;
+
     public bool TimerStarted { get; private set; } = false;
 
     private void Start()
@@ -56,7 +59,7 @@ public class Timer : MonoBehaviour
         OnObjectiveFailed?.Invoke();
     }
 
-    //call this method when you finished the minigame
+    //call this method when you finish the minigame
     public void CompleteObjective()
     {
         StopAllCoroutines();
