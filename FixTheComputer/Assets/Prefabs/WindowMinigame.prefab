@@ -692,7 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   original: {fileID: 41888035778300737}
-  objectPoolSize: 200
+  objectPoolSize: 500
   refreshTime: 0.02
 --- !u!114 &41888036118499634
 MonoBehaviour:
