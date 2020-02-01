@@ -60,5 +60,6 @@ public class FishBehaviour : MonoBehaviour
     public void Stop()
     {
         fishSpeed = 0f;
+        wobbly = false;
     }
 }
