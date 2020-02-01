@@ -14,10 +14,29 @@ public class LetterBehaviour : MonoBehaviour
     char[] typeChars;
     char[] answerChars;
     int currentChar;
+    public ScriptableManager scriptM;
+    public Timer timer;
+    public TextMeshProUGUI winloseText;
+    bool gameOver;
 
+    void SetDifficulty()
+    {
+        if (scriptM.difficulty == ScriptableManager.Difficulty.Easy)
+        {
+            difficulty = 5;
+        }
+        if (scriptM.difficulty == ScriptableManager.Difficulty.Medium)
+        {
+            difficulty = 7;
+        }
+        if (scriptM.difficulty == ScriptableManager.Difficulty.Hard)
+        {
+            difficulty = 9;
+        }
+    }
     void Start()
     {
-        difficulty = 6;
+        SetDifficulty();
         typeText = this.GetComponent<TextMeshProUGUI>();
         typeChars = new char[difficulty];
         answerChars = new char[difficulty];
@@ -27,7 +46,7 @@ public class LetterBehaviour : MonoBehaviour
     }
     public static char GetLetter()
     {
-        string chars = "$%#@!*abcdefghijklmnopqrstuvwxyz1234567890?;:ABCDEFGHIJKLMNOPQRSTUVWXYZ^&";
+        string chars = "$%#@!*abcdefhijkmnopqrstuvwxyz123456789?;:ABCDEFGHJKLMNOPQRSTUVWXYZ^&"; //excluded g and zero^and l (L) and I
         int num = Random.Range(0, chars.Length);
         return chars[num];
     }
@@ -41,9 +60,12 @@ public class LetterBehaviour : MonoBehaviour
 
     void Update()
     {
+        if (gameOver)
+        {
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            Debug.Log("BACKSAPCE");
             if (currentChar != 0)
             {
                 currentChar--;
@@ -63,23 +85,40 @@ public class LetterBehaviour : MonoBehaviour
             {
                 if (!EnterAnswer())
                 {
-                    Debug.Log("WRONG");
+                    winloseText.text = "Wrong answer!";
+                    StartCoroutine(WinOrLose(""));//TODO: Add next screen
+                    gameOver = true;
+                    scriptM.lives--;
+                    return;
                 }
-                //Add the right scene SceneManager.LoadScene("PostitMinigame");
+                winloseText.text = "Good job!";
+                gameOver = true;
+                StartCoroutine(WinOrLose("")); //TODO: Add next screen
 
-                Debug.Log("Going back");
-                //TODO: Go back to main screen
             }
         }
     }
-
+    public void TimesUp()
+    {
+        if (!winloseText.gameObject.activeInHierarchy)
+        {
+            winloseText.text = "Time's up";
+            gameOver = true;
+            StartCoroutine(WinOrLose(""));//TODO: Add next screen
+        }
+    }
+    IEnumerator WinOrLose(string nextScene)
+    {
+        winloseText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        //SceneManager.LoadScene(nextScene);
+    }
     bool EnterAnswer()
     {
         for(int i = 0; i < difficulty; i++)
         {
             if (typeChars[i] != answerChars[i])
             {
-                Debug.Log(typeChars[i] + " != " + answerChars[i]);
                 return false;
             }
         }
