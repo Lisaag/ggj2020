@@ -8,14 +8,14 @@ public class MusicPlayer : MonoBehaviour
 
     [SerializeField]
     AudioClip billy, havana, shape, lilnas, LMFAO, mackle, post, taylor;
-
+    AudioSource au;
     private void Awake()
     {
         DontDestroyOnLoad(this);
     }
     void Start()
     {
-        audio = GetComponent<AudioSource>();
+       au = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,52 +24,44 @@ public class MusicPlayer : MonoBehaviour
 
     }
 
-    public void PlayBilly() { 
-        audio.clip = billy;
-        audio.Play();
-        Debug.Log("hit");
+    public void PlayBilly() {
+        au.clip = billy;
+        au.Play();
     }
     public void PlayHavana()
     {
-        audio.clip = havana;
-        audio.Play();
-        Debug.Log("hit");
+        au.clip = havana;
+        au.Play();
     }
     public void PlayShape()
     {
-        audio.clip = shape;
-        audio.Play();
-        Debug.Log("hit");
+        au.clip = shape;
+        au.Play();
     }
     public void PlayLilNas()
     {
-        audio.clip = lilnas;
-        audio.Play();
-        Debug.Log("hit");
+        au.clip = lilnas;
+        au.Play();
     }
     public void PlayLMFAO()
     {
-        audio.clip = LMFAO;
-        audio.Play();
-        Debug.Log("hit");
+        au.clip = LMFAO;
+        au.Play();
     }
     public void PlayMackle()
     {
-        audio.clip = mackle;
-        audio.Play();
-        Debug.Log("hit");
+        au.clip = mackle;
+        au.Play();
     }
     public void PlayPost()
     {
-        audio.clip = post;
-        audio.Play();
-        Debug.Log("hit");
+        au.clip = post;
+        au.Play();
     }
     public void PlayTaylor()
     {
-        audio.clip = taylor;
-        audio.Play();
-        Debug.Log("hit");
+        au.clip = taylor;
+        au.Play();
     }
 
 

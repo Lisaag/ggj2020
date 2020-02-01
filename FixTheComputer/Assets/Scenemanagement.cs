@@ -16,6 +16,7 @@ public class Scenemanagement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        addLists();
     }
 
     // Update is called once per frame
