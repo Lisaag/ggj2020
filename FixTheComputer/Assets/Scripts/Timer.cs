@@ -18,6 +18,7 @@ public class Timer : MonoBehaviour
     [SerializeField] private UnityEvent OnMinigameFinished;
     [SerializeField] private UnityEvent OnObjectiveFailed;
 
+    public float PlayTime { get => time; set => time = value; }
     public bool TimerStarted { get; private set; } = false;
 
     private void Start()

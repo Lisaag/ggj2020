@@ -879,6 +879,17 @@ PrefabInstance:
       propertyPath: timer
       value: 
       objectReference: {fileID: 262319663}
+    - target: {fileID: 41888036118499634, guid: b0c99947a8ec57a40a0be04db253b7a2,
+        type: 3}
+      propertyPath: checkingInterval
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 41888036118499634, guid: b0c99947a8ec57a40a0be04db253b7a2,
+        type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 11400000, guid: 735130f9f9dbdcd47b911906c6d49edb,
+        type: 2}
     - target: {fileID: 41888036118499645, guid: b0c99947a8ec57a40a0be04db253b7a2,
         type: 3}
       propertyPath: m_Name
@@ -908,6 +919,11 @@ PrefabInstance:
       propertyPath: OnMinigameFinished.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1873340995}
+    - target: {fileID: 9141667751984443320, guid: 6d0d40e6fe5ebc548b8d0d8bb009afde,
+        type: 3}
+      propertyPath: time
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 9141667751984443323, guid: 6d0d40e6fe5ebc548b8d0d8bb009afde,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -4,11 +4,28 @@ using UnityEngine.SceneManagement;
 
 public class ScreenFillRate : MonoBehaviour
 {
+    [SerializeField] private ScriptableManager manager;
     [SerializeField] private Timer timer;
     [SerializeField] private int raycastDistance = 16;
     [SerializeField] [Range(0.1f, 1f)] private float checkingInterval = 0.25f;
 
     private bool completelyFilled = false;
+
+    private void Awake()
+    {
+        switch (manager.difficulty)
+        {
+            case ScriptableManager.Difficulty.Easy:
+                timer.PlayTime = 10f;
+                break;
+            case ScriptableManager.Difficulty.Medium:
+                timer.PlayTime = 7.5f;
+                break;
+            case ScriptableManager.Difficulty.Hard:
+                timer.PlayTime = 5f;
+                break;
+        }
+    }
 
     private void Start()
     {
