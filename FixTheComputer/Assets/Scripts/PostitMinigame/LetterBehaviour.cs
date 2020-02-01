@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LetterBehaviour : MonoBehaviour
@@ -15,6 +16,8 @@ public class LetterBehaviour : MonoBehaviour
     int currentChar;
     public ScriptableManager scriptM;
     public Timer timer;
+    public TextMeshProUGUI winloseText;
+    bool gameOver;
 
     void SetDifficulty()
     {
@@ -43,7 +46,7 @@ public class LetterBehaviour : MonoBehaviour
     }
     public static char GetLetter()
     {
-        string chars = "$%#@!*abcdefhijklmnopqrstuvwxyz123456789?;:ABCDEFGHIJKLMNOPQRSTUVWXYZ^&"; //excluded g and zero
+        string chars = "$%#@!*abcdefhijkmnopqrstuvwxyz123456789?;:ABCDEFGHJKLMNOPQRSTUVWXYZ^&"; //excluded g and zero^and l (L) and I
         int num = Random.Range(0, chars.Length);
         return chars[num];
     }
@@ -57,9 +60,12 @@ public class LetterBehaviour : MonoBehaviour
 
     void Update()
     {
+        if (gameOver)
+        {
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            Debug.Log("BACKSAPCE");
             if (currentChar != 0)
             {
                 currentChar--;
@@ -79,21 +85,40 @@ public class LetterBehaviour : MonoBehaviour
             {
                 if (!EnterAnswer())
                 {
-                    Debug.Log("WRONG");
+                    winloseText.text = "Wrong answer!";
+                    StartCoroutine(WinOrLose(""));//TODO: Add next screen
+                    gameOver = true;
+                    scriptM.lives--;
+                    return;
                 }
-                Debug.Log("Going back");
-                //TODO: Go back to main screen
+                winloseText.text = "Good job!";
+                gameOver = true;
+                StartCoroutine(WinOrLose("")); //TODO: Add next screen
+
             }
         }
     }
-
+    public void TimesUp()
+    {
+        if (!winloseText.gameObject.activeInHierarchy)
+        {
+            winloseText.text = "Time's up";
+            gameOver = true;
+            StartCoroutine(WinOrLose(""));//TODO: Add next screen
+        }
+    }
+    IEnumerator WinOrLose(string nextScene)
+    {
+        winloseText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        //SceneManager.LoadScene(nextScene);
+    }
     bool EnterAnswer()
     {
         for(int i = 0; i < difficulty; i++)
         {
             if (typeChars[i] != answerChars[i])
             {
-                Debug.Log(typeChars[i] + " != " + answerChars[i]);
                 return false;
             }
         }
