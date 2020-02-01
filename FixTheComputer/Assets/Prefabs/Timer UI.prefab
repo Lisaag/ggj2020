@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startOnAwake: 1
-  time: 5
+  time: 4
   text: {fileID: 9141667752467166214}
   OnStartTimer:
     m_PersistentCalls:

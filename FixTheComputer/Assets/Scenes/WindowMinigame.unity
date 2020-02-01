@@ -441,7 +441,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 733f2fe19ebc66e469d5b1f2ec87b6bc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -997,37 +997,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 41888036118499632, guid: b0c99947a8ec57a40a0be04db253b7a2,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 41888036118499632, guid: b0c99947a8ec57a40a0be04db253b7a2,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 41888036118499632, guid: b0c99947a8ec57a40a0be04db253b7a2,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 41888036118499634, guid: b0c99947a8ec57a40a0be04db253b7a2,
         type: 3}
       propertyPath: timer
       value: 
       objectReference: {fileID: 262319663}
-    - target: {fileID: 41888036118499634, guid: b0c99947a8ec57a40a0be04db253b7a2,
-        type: 3}
-      propertyPath: checkingInterval
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 41888036118499634, guid: b0c99947a8ec57a40a0be04db253b7a2,
-        type: 3}
-      propertyPath: manager
-      value: 
-      objectReference: {fileID: 11400000, guid: 735130f9f9dbdcd47b911906c6d49edb,
-        type: 2}
     - target: {fileID: 41888036118499645, guid: b0c99947a8ec57a40a0be04db253b7a2,
         type: 3}
       propertyPath: m_Name
@@ -1057,11 +1031,6 @@ PrefabInstance:
       propertyPath: OnMinigameFinished.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1873340995}
-    - target: {fileID: 9141667751984443320, guid: 6d0d40e6fe5ebc548b8d0d8bb009afde,
-        type: 3}
-      propertyPath: time
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 9141667751984443323, guid: 6d0d40e6fe5ebc548b8d0d8bb009afde,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1166,21 +1135,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9141667751984443323, guid: 6d0d40e6fe5ebc548b8d0d8bb009afde,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9141667751984443323, guid: 6d0d40e6fe5ebc548b8d0d8bb009afde,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9141667751984443323, guid: 6d0d40e6fe5ebc548b8d0d8bb009afde,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9141667751984443324, guid: 6d0d40e6fe5ebc548b8d0d8bb009afde,
         type: 3}
