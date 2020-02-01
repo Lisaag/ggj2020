@@ -13,7 +13,7 @@ public class ScriptableManager : ScriptableObject
         Hard
     }
 
-    private void Awake()
+    private void OnEnable()
     {
         lives = 3;
     }
