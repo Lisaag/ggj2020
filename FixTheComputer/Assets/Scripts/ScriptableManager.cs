@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [CreateAssetMenu]
 public class ScriptableManager : ScriptableObject
@@ -14,8 +13,13 @@ public class ScriptableManager : ScriptableObject
         Hard
     }
 
-    private void Awake()
+    private void OnEnable()
     {
         lives = 3;
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
