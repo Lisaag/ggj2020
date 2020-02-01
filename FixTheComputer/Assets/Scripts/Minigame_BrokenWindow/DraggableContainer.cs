@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class DraggableContainer : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class DraggableContainer : MonoBehaviour
     private bool isDragging = false;
 
     public bool LockDragging { get; set; } = false;
+
+    public UnityAction<GameObject> OnMouseUp;
 
     private void Start()
     {
@@ -46,6 +49,7 @@ public class DraggableContainer : MonoBehaviour
 
                 if (Input.GetMouseButtonUp(0))
                 {
+                    OnMouseUp?.Invoke(gameObject);
                     isDragging = false;
                 }
             }
