@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 225040d594877ff479f4183a99995aa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  requireButtonPress: 0
 --- !u!65 &991773677
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -211,5 +212,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac01ea33826a695428b6e72a8eb68afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: {fileID: 0}
   raycastDistance: 16
   checkingInterval: 0.25

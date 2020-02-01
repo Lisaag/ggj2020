@@ -56,16 +56,8 @@ public class Timer : MonoBehaviour
         OnObjectiveFailed?.Invoke();
     }
 
-    private void Update()
-    {
-
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            StopTimer();
-        }
-    }
-
-    public void StopTimer()
+    //call this method when you finished the minigame
+    public void CompleteObjective()
     {
         StopAllCoroutines();
         TimerStarted = false;

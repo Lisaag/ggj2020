@@ -2,6 +2,8 @@
 
 public class DraggableContainer : MonoBehaviour
 {
+    [SerializeField] private bool requireButtonPress;
+
     private BoxCollider boxCollider;
 
     private Vector3 screenPoint;
@@ -12,32 +14,40 @@ public class DraggableContainer : MonoBehaviour
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider>();
+
+        if (!requireButtonPress)
+        {
+            isDragging = true;
+        }
     }
 
     private void Update()
     {
-        RaycastHit hit;
-        if (Input.GetMouseButtonDown(0) &&
-            Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit) &&
-            hit.collider == boxCollider)
+        if (requireButtonPress)
         {
-            screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+            RaycastHit hit;
+            if (Input.GetMouseButtonDown(0) &&
+                Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit) &&
+                hit.collider == boxCollider)
+            {
+                screenPoint = Camera.main.WorldToScreenPoint(transform.position);
 
-            offset = transform.position -
-                Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+                offset = transform.position -
+                    Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
 
-            isDragging = true;
-        }
+                isDragging = true;
+            }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            isDragging = false;
+            if (Input.GetMouseButtonUp(0))
+            {
+                isDragging = false;
+            }
         }
         
         if (isDragging)
         {
             Vector3 newScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-            Vector3 newPosition = Camera.main.ScreenToWorldPoint(newScreenPoint) + offset;
+            Vector3 newPosition = Camera.main.ScreenToWorldPoint(newScreenPoint);
             transform.position = newPosition;
         }
     }

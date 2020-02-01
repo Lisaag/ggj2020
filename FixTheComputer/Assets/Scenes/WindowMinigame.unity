@@ -375,6 +375,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 9141667752125104535}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &262319663 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9141667751984443320, guid: 6d0d40e6fe5ebc548b8d0d8bb009afde,
+    type: 3}
+  m_PrefabInstance: {fileID: 9141667752125104535}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dbb4bd71f87f924aa2e14fb433d5e75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &598774011
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,6 +862,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 41888036118499634, guid: b0c99947a8ec57a40a0be04db253b7a2,
+        type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 262319663}
     - target: {fileID: 41888036118499645, guid: b0c99947a8ec57a40a0be04db253b7a2,
         type: 3}
       propertyPath: m_Name
@@ -867,6 +884,16 @@ PrefabInstance:
     - target: {fileID: 9141667751984443320, guid: 6d0d40e6fe5ebc548b8d0d8bb009afde,
         type: 3}
       propertyPath: OnStartTimer.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 649842261}
+    - target: {fileID: 9141667751984443320, guid: 6d0d40e6fe5ebc548b8d0d8bb009afde,
+        type: 3}
+      propertyPath: OnObjectiveCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 649842261}
+    - target: {fileID: 9141667751984443320, guid: 6d0d40e6fe5ebc548b8d0d8bb009afde,
+        type: 3}
+      propertyPath: OnObjectiveFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 649842261}
     - target: {fileID: 9141667751984443323, guid: 6d0d40e6fe5ebc548b8d0d8bb009afde,
