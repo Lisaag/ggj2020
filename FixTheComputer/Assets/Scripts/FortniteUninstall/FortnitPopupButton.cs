@@ -23,7 +23,7 @@ public class FortnitPopupButton : MonoBehaviour
             {
                 //WIN CODE HERE
                 Debug.Log("You won this micro game!!");
-                //SceneManager.LoadScene("");
+                SceneManager.LoadScene("Bricks");
                 this.transform.parent.gameObject.SetActive(false);
                 return;
             }
@@ -33,6 +33,7 @@ public class FortnitPopupButton : MonoBehaviour
         {
             //LOSING CODE HERE
             this.transform.parent.gameObject.SetActive(false);
+            SceneManager.LoadScene("Bricks");
             Debug.Log("You lost this micro game");
         }
     }

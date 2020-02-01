@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PostitMinigame.unity
     guid: 06f624094e7cc31409157578763abb36
   - enabled: 1
+    path: Assets/Scenes/Bricks.unity
+    guid: 17182cf808c32124fbbdae2abfa5eddb
+  - enabled: 1
     path: Assets/Scenes/samplescene.unity
     guid: cbfe36cfddfde964d9dfce63a355d5dd
   - enabled: 1
