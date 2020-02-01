@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 9141667751984443321}
   - component: {fileID: 9141667751984443322}
   - component: {fileID: 9141667751984443320}
+  - component: {fileID: 4319866782193720520}
   m_Layer: 5
   m_Name: Timer UI
   m_TagString: Untagged
@@ -166,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startOnAwake: 1
-  time: 4
+  time: 10
   text: {fileID: 9141667752467166214}
   OnStartTimer:
     m_PersistentCalls:
@@ -207,9 +208,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 4319866782193720520}
+        m_MethodName: SwitchScenes
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnObjectiveFailed:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4319866782193720520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9141667751984443324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eea71aa28fe0aa49a6686620d9e75b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9141667752467166232
 GameObject:
   m_ObjectHideFlags: 0

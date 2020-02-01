@@ -1031,11 +1031,6 @@ PrefabInstance:
       propertyPath: OnMinigameFinished.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1873340995}
-    - target: {fileID: 9141667751984443320, guid: 6d0d40e6fe5ebc548b8d0d8bb009afde,
-        type: 3}
-      propertyPath: time
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 9141667751984443323, guid: 6d0d40e6fe5ebc548b8d0d8bb009afde,
         type: 3}
       propertyPath: m_LocalPosition.x
