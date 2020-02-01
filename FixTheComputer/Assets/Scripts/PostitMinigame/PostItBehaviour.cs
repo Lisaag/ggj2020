@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PostItBehaviour : MonoBehaviour
 {
-
+    public float time;
     void Start()
     {
         StartCoroutine(HidePostit());
@@ -12,7 +12,7 @@ public class PostItBehaviour : MonoBehaviour
 
     IEnumerator HidePostit()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(time);
         this.gameObject.SetActive(false);
     }
 }

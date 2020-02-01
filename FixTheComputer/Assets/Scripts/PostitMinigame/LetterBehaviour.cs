@@ -13,10 +13,27 @@ public class LetterBehaviour : MonoBehaviour
     char[] typeChars;
     char[] answerChars;
     int currentChar;
+    public ScriptableManager scriptM;
+    public Timer timer;
 
+    void SetDifficulty()
+    {
+        if (scriptM.difficulty == ScriptableManager.Difficulty.Easy)
+        {
+            difficulty = 5;
+        }
+        if (scriptM.difficulty == ScriptableManager.Difficulty.Medium)
+        {
+            difficulty = 7;
+        }
+        if (scriptM.difficulty == ScriptableManager.Difficulty.Hard)
+        {
+            difficulty = 9;
+        }
+    }
     void Start()
     {
-        difficulty = 6;
+        SetDifficulty();
         typeText = this.GetComponent<TextMeshProUGUI>();
         typeChars = new char[difficulty];
         answerChars = new char[difficulty];
@@ -26,7 +43,7 @@ public class LetterBehaviour : MonoBehaviour
     }
     public static char GetLetter()
     {
-        string chars = "$%#@!*abcdefghijklmnopqrstuvwxyz1234567890?;:ABCDEFGHIJKLMNOPQRSTUVWXYZ^&";
+        string chars = "$%#@!*abcdefhijklmnopqrstuvwxyz123456789?;:ABCDEFGHIJKLMNOPQRSTUVWXYZ^&"; //excluded g and zero
         int num = Random.Range(0, chars.Length);
         return chars[num];
     }

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e05ada8c46d17404ba1110c4f9aca6a0, type: 3}
-  m_Name: New Scriptable Manager
+  m_Name: Manager
   m_EditorClassIdentifier: 
   lives: 3
-  difficulty: 0
+  difficulty: 2

@@ -5,21 +5,24 @@ using UnityEngine;
 public class EnvelopeBehaviour : MonoBehaviour
 {
     public ScriptableManager scriptM;
-    bool move;
+    public bool move;
+    Vector3 startPos;
+    float speed;
     void Start()
     {
+        startPos = this.transform.position;
+        speed = Random.Range(0.5f, 2f);
         if (scriptM.difficulty == ScriptableManager.Difficulty.Hard)
         {
             move = true;
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (move == true)
+        if (move)
         {
-            this.transform.position += new Vector3(Mathf.Lerp(transform.position.x - 1f, transform.position.x + 1f, Mathf.PingPong(Time.time, 1f)), 0, 0);
+            this.transform.position = new Vector3(startPos.x, startPos.y + Mathf.Lerp(-1, 1, Mathf.Sin(Time.time * speed)), startPos.z);
         }
     }
 }

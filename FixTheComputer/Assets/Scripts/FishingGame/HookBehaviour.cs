@@ -71,7 +71,7 @@ public class HookBehaviour : MonoBehaviour
         {
             badGame.SetActive(true);
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.5f);
         SceneManager.LoadScene("KeyboardMinigame");
     }
     void Update()
@@ -166,6 +166,7 @@ public class HookBehaviour : MonoBehaviour
         {
             currentDirection = upwardsDirection;
             other.transform.parent = this.transform;
+            other.GetComponent<EnvelopeBehaviour>().move = false;
         }
 
         if (other.transform.CompareTag("Borders"))
