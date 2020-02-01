@@ -14,4 +14,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FishingMinigame.unity
     guid: 5b38c4aaec3975c47a00e1a58072df6d
+  - enabled: 1
+    path: Assets/Scenes/FortniteUninstallScene.unity
+    guid: a2ee1a91d2e04a54e9202ecf251b94be
+  - enabled: 1
+    path: Assets/Scenes/KeyboardMinigame.unity
+    guid: e51c3aa4ee368244ba9da0e2bcf7062c
+  - enabled: 1
+    path: Assets/Scenes/MainScreen.unity
+    guid: 59da8cf191b7a094ea6fe652307a337c
+  - enabled: 1
+    path: Assets/Scenes/phishingMail.unity
+    guid: 11e79dac51604a545a6ae077d7e4b79c
+  - enabled: 1
+    path: Assets/Scenes/PostitMinigame.unity
+    guid: 06f624094e7cc31409157578763abb36
+  - enabled: 1
+    path: Assets/Scenes/samplescene.unity
+    guid: cbfe36cfddfde964d9dfce63a355d5dd
+  - enabled: 1
+    path: Assets/Scenes/TugOfWarMinigame.unity
+    guid: 97499b5f634a1464fb06669e2959b50a
   m_configObjects: {}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FortnitPopupButton : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class FortnitPopupButton : MonoBehaviour
             {
                 //WIN CODE HERE
                 Debug.Log("You won this micro game!!");
+                //SceneManager.LoadScene("");
                 this.transform.parent.gameObject.SetActive(false);
                 return;
             }

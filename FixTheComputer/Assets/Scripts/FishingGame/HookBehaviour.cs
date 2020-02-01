@@ -59,8 +59,7 @@ public class HookBehaviour : MonoBehaviour
                         fishiesCaught += 1;
                         if (fishiesCaught == 5)
                         {
-                            //TODO: Change to main scene
-                            //SceneManager.LoadScene("MainScene");
+                            SceneManager.LoadScene("KeyboardMinigame");
                         }
                         Destroy(fishB.gameObject);
                     }

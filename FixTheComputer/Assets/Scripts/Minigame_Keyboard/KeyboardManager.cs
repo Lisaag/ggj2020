@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class KeyboardManager : MonoBehaviour
 {
@@ -24,6 +25,6 @@ public class KeyboardManager : MonoBehaviour
             }
         }
 
-        //if you made it here you win smile 🤠
+        SceneManager.LoadScene("FortniteUninstallScene");
     }
 }
