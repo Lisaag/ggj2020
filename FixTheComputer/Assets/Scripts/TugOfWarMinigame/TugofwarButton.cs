@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TugofwarButton : MonoBehaviour
 {
@@ -26,14 +27,13 @@ public class TugofwarButton : MonoBehaviour
     {
         rope.transform.position += new Vector3(ropeSpeed, 0f, 0f) * Time.deltaTime;
         if(rope.transform.position.x < player.transform.position.x)
-        {
-            //TODO: win
-            Debug.Log("Winner!");
+        {   //WIN
+            SceneManager.LoadScene("WindowMinigame");
         }
         else if (rope.transform.position.x > virus.transform.position.x)
         {
-            //TODO: lose
-            Debug.Log("Stop suckin diiiiiiiiiiiiiiiiiiiick");
+            //LOSE
+            SceneManager.LoadScene("WindowMinigame");
         }
     }
 
