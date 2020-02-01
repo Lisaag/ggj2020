@@ -5,6 +5,7 @@ public class DraggableContainer : MonoBehaviour
 {
     [SerializeField] private bool requireButtonPress;
 
+    private AudioSource audioSource;
     private BoxCollider boxCollider;
 
     private Vector3 screenPoint;
@@ -18,6 +19,7 @@ public class DraggableContainer : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         boxCollider = GetComponent<BoxCollider>();
 
         if (!requireButtonPress)
@@ -45,6 +47,8 @@ public class DraggableContainer : MonoBehaviour
                         Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
 
                     isDragging = true;
+
+                    audioSource?.Play();
                 }
 
                 if (Input.GetMouseButtonUp(0))

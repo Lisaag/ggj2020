@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DuplicateWindows : MonoBehaviour
 {
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private int audioInterval;
     [SerializeField] private Transform original;
     [SerializeField] private int objectPoolSize;
     [SerializeField] [Range(0.0167f, 1f)] private float refreshTime = 0.0167f;
@@ -33,6 +35,7 @@ public class DuplicateWindows : MonoBehaviour
     //de offset klopt niet helemaal, maar is goed genoeg voor nu. fix later wanneer belangrijkere dingen klaar zijn.
     private IEnumerator UpdatePrefabAvailability()
     {
+        int currentInterval = 0;
         while (true)
         {
             yield return new WaitForSeconds(refreshTime);
@@ -53,6 +56,11 @@ public class DuplicateWindows : MonoBehaviour
             }
 
             objects[currentIndex++].position = original.position + offset * 2;
+
+            if (++currentInterval % audioInterval == 0)
+            {
+                audioSource?.Play();
+            }
         }
     }
 }
