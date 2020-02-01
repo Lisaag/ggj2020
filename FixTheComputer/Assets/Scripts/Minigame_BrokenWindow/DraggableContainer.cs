@@ -2,6 +2,8 @@
 
 public class DraggableContainer : MonoBehaviour
 {
+    [SerializeField] private bool requireButtonPress;
+
     private BoxCollider boxCollider;
 
     private Vector3 screenPoint;
@@ -9,36 +11,51 @@ public class DraggableContainer : MonoBehaviour
 
     private bool isDragging = false;
 
+    public bool LockDragging { get; set; } = false;
+
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider>();
+
+        if (!requireButtonPress)
+        {
+            screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+
+            isDragging = true;
+        }
     }
 
     private void Update()
     {
-        RaycastHit hit;
-        if (Input.GetMouseButtonDown(0) &&
-            Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit) &&
-            hit.collider == boxCollider)
+        if (!LockDragging)
         {
-            screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+            if (requireButtonPress)
+            {
+                RaycastHit hit;
+                if (Input.GetMouseButtonDown(0) &&
+                    Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit) &&
+                    hit.collider == boxCollider)
+                {
+                    screenPoint = Camera.main.WorldToScreenPoint(transform.position);
 
-            offset = transform.position -
-                Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+                    offset = transform.position -
+                        Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
 
-            isDragging = true;
-        }
+                    isDragging = true;
+                }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            isDragging = false;
-        }
-        
-        if (isDragging)
-        {
-            Vector3 newScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-            Vector3 newPosition = Camera.main.ScreenToWorldPoint(newScreenPoint) + offset;
-            transform.position = newPosition;
+                if (Input.GetMouseButtonUp(0))
+                {
+                    isDragging = false;
+                }
+            }
+
+            if (isDragging)
+            {
+                Vector3 newScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
+                Vector3 newPosition = Camera.main.ScreenToWorldPoint(newScreenPoint);
+                transform.position = newPosition;
+            }
         }
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class ScreenFillRate : MonoBehaviour
 {
+    [SerializeField] private Timer timer;
     [SerializeField] private int raycastDistance = 16;
     [SerializeField] [Range(0.1f, 1f)] private float checkingInterval = 0.25f;
 
@@ -38,8 +39,7 @@ public class ScreenFillRate : MonoBehaviour
 
             if (completelyFilled)
             {
-                //temporary change.
-                SceneManager.LoadScene("New Scene");
+                timer.CompleteObjective();
             }
         }
     } 
