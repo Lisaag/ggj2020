@@ -13,28 +13,52 @@ public class TugofwarButton : MonoBehaviour
     public GameObject stickers;
     GameObject activeSticker;
     List<GameObject> stickerList = new List<GameObject>();
-    // Start is called before the first frame update
+    Vector3 startPos;
+    public float speed;
+    public ScriptableManager scriptM;
+
     void Start()
     {
+        SetDifficulty();
         foreach(Transform t in stickers.transform)
         {
             stickerList.Add(t.gameObject);
         }
+        startPos = transform.position;
     }
 
-    // Update is called once per frame
+    void SetDifficulty()
+    {
+        if (scriptM.difficulty == ScriptableManager.Difficulty.Easy)
+        {
+            ropeSpeed = 100;
+            pullSpeed = 50;
+        }
+        if (scriptM.difficulty == ScriptableManager.Difficulty.Medium)
+        {
+            ropeSpeed = 150;
+            pullSpeed = 40;
+        }
+        if (scriptM.difficulty == ScriptableManager.Difficulty.Hard)
+        {
+            ropeSpeed = 150;
+            pullSpeed = 30;
+        }
+    }
+
     void Update()
     {
         rope.transform.position += new Vector3(ropeSpeed, 0f, 0f) * Time.deltaTime;
         if(rope.transform.position.x < player.transform.position.x)
-        {   //WIN
+        {   //TODO: Insert win action besides scene transition
             SceneManager.LoadScene("WindowMinigame");
         }
         else if (rope.transform.position.x > virus.transform.position.x)
         {
-            //LOSE
+            scriptM.lives--;
             SceneManager.LoadScene("WindowMinigame");
         }
+        this.transform.position += new Vector3(Mathf.Sin(1f * Time.time * speed), 0, 0);
     }
 
     public void PullToPlayer()
