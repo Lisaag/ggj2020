@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
@@ -9,8 +10,12 @@ public class Timer : MonoBehaviour
     [SerializeField] private float time = 5f;
     private float currentTime = float.PositiveInfinity;
 
+    [Header("References")]
+    [SerializeField] private Text text;
+
     [Header("Timer Started Events")]
     [SerializeField] private UnityEvent OnStartTimer;
+
     [Header("Timer Finished Events")]
     [SerializeField] private UnityEvent OnObjectiveCompleted;
     [SerializeField] private UnityEvent OnObjectiveFailed;
@@ -25,10 +30,16 @@ public class Timer : MonoBehaviour
         }
     }
 
+    private void UpdateTextObject()
+    {
+        text.text = currentTime.ToString("#,00.00");
+    }
+
     public IEnumerator StartTimer()
     {
         TimerStarted = true;
         currentTime = time;
+        UpdateTextObject();
 
         OnStartTimer?.Invoke();
 
@@ -36,13 +47,18 @@ public class Timer : MonoBehaviour
         {
             yield return new WaitForEndOfFrame();
             currentTime -= Time.deltaTime;
+            UpdateTextObject();
         }
+
+        currentTime = 0;
+        UpdateTextObject();
 
         OnObjectiveFailed?.Invoke();
     }
 
     private void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.A))
         {
             StopTimer();
