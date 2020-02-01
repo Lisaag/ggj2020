@@ -13,15 +13,10 @@ public class Timer : MonoBehaviour
     [Header("References")]
     [SerializeField] private Text text;
 
-    [Header("Timer Started Events")]
+    [Header("Events")]
     [SerializeField] private UnityEvent OnStartTimer;
-
-    [Header("Timer Finished Events")]
-    [SerializeField] private UnityEvent OnObjectiveCompleted;
+    [SerializeField] private UnityEvent OnMinigameFinished;
     [SerializeField] private UnityEvent OnObjectiveFailed;
-
-    private int flickerAmount = 5;
-    private float flickerTime = 0.5f;
 
     public bool TimerStarted { get; private set; } = false;
 
@@ -56,6 +51,7 @@ public class Timer : MonoBehaviour
         currentTime = 0;
         UpdateTextObject();
 
+        OnMinigameFinished?.Invoke();
         OnObjectiveFailed?.Invoke();
     }
 
@@ -67,7 +63,7 @@ public class Timer : MonoBehaviour
 
         if (currentTime > 0)
         {
-            OnObjectiveCompleted?.Invoke();
+            OnMinigameFinished?.Invoke();
         }
     }
 }

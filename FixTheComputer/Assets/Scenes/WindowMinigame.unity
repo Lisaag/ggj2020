@@ -900,22 +900,12 @@ PrefabInstance:
       objectReference: {fileID: 649842261}
     - target: {fileID: 9141667751984443320, guid: 6d0d40e6fe5ebc548b8d0d8bb009afde,
         type: 3}
-      propertyPath: OnObjectiveCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: OnMinigameFinished.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 649842261}
     - target: {fileID: 9141667751984443320, guid: 6d0d40e6fe5ebc548b8d0d8bb009afde,
         type: 3}
-      propertyPath: OnObjectiveCompleted.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1873340995}
-    - target: {fileID: 9141667751984443320, guid: 6d0d40e6fe5ebc548b8d0d8bb009afde,
-        type: 3}
-      propertyPath: OnObjectiveFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 649842261}
-    - target: {fileID: 9141667751984443320, guid: 6d0d40e6fe5ebc548b8d0d8bb009afde,
-        type: 3}
-      propertyPath: OnObjectiveFailed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: OnMinigameFinished.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1873340995}
     - target: {fileID: 9141667751984443323, guid: 6d0d40e6fe5ebc548b8d0d8bb009afde,
