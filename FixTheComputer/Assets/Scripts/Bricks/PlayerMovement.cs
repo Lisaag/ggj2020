@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float movement, velocity;
     public Transform windowLeftBorder, windowRightBorder;
+    public float minRotation, maxRotation;
     Vector3 screenPoint;
 
     private void Start()
@@ -40,6 +41,12 @@ public class PlayerMovement : MonoBehaviour
         float endPos = transform.position.x;
 
         velocity = (endPos - startPos) * 10;
+
+        //Quaternion newRot = new Quaternion(Mathf.Clamp(velocity, minRotation, maxRotation), transform.rotation.y, transform.rotation.z, transform.rotation.w);
+        //transform.rotation = Quaternion.Lerp(transform.rotation, newRot, 1);
+
+        //Vector3 direction = new Vector3(Input.mousePosition.x - transform.position.x, Input.mousePosition.y - transform.position.y, Input.mousePosition.z - transform.position.z);
+        //transform.forward = direction;
     }
 
 }

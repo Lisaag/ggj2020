@@ -28,8 +28,8 @@ public class BallMovement : MonoBehaviour
     {
         if (other.transform == player)
         { 
-            rb.AddForce(transform.forward * speed / (100 / playerBoostEffectiveness));
-            rb.AddForce(new Vector3(other.gameObject.GetComponent<PlayerMovement>().velocity * speed / (100 / playerInfluence), 0f, 0f));
+            //rb.AddForce(transform.forward * speed / (100 / playerBoostEffectiveness));
+            //rb.AddForce(new Vector3(other.gameObject.GetComponent<PlayerMovement>().velocity * speed / (100 / playerInfluence), 0f, 0f));
         }
 
         if (other.gameObject.CompareTag("Brick"))
