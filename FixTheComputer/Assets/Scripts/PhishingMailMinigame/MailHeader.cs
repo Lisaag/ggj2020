@@ -24,6 +24,6 @@ public class MailHeader : MonoBehaviour
         spriteRenderer.color = headerColor;
 
         Instantiate(matrixIcon, new Vector3((transform.position.x - ( (spriteRenderer.size.x / 2) - matrixIcon.GetComponent<SpriteRenderer>().size.x / 2)), transform.position.y, transform.position.z), Quaternion.identity);
-        Instantiate(headerText, new Vector3((transform.position.x - ((spriteRenderer.size.x / 2) - matrixIcon.GetComponent<SpriteRenderer>().size.x * 2)), transform.position.y, transform.position.z), Quaternion.identity);
+        Instantiate(headerText, new Vector3((transform.position.x - ((spriteRenderer.size.x / 2) - matrixIcon.GetComponent<SpriteRenderer>().size.x * 1.5f)), transform.position.y, transform.position.z), Quaternion.identity);
     }
 }

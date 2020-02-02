@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PhishingGameManager : MonoBehaviour
 {
-    [SerializeField]
-    int mailAmount;
+    [HideInInspector]
+    public int mailAmount = 5;
+
+    private int maxMailAmount = 19;
 
     [SerializeField]
     GameObject mailObject;
@@ -13,10 +15,17 @@ public class PhishingGameManager : MonoBehaviour
     [SerializeField]
     MailTrashbin mailTrashbin;
 
+    [SerializeField]
+    ScriptableManager scriptableManager;
+
     public int points = 0;
+
+    [HideInInspector]
+    public GameObject[] deleteMails;
 
     void Start()
     {
+        deleteMails = new GameObject[maxMailAmount];
         CreateMails();
 
         this.points = 0;
@@ -24,21 +33,30 @@ public class PhishingGameManager : MonoBehaviour
 
     void CreateMails()
     {
-        for(int i = 0; i < mailAmount; i++)
+        if(scriptableManager.difficulty == ScriptableManager.Difficulty.Easy) mailAmount = 10;
+        else if (scriptableManager.difficulty == ScriptableManager.Difficulty.Medium) mailAmount = 15;
+        else mailAmount = maxMailAmount;
+
+        for (int i = 0; i < mailAmount; i++)
         {
             GameObject mO = Instantiate(mailObject, this.transform);
+            if (scriptableManager.difficulty == ScriptableManager.Difficulty.Easy) mO.GetComponent<MailSprite>().mailRectSize = new Vector2(55, 3);
+            else if (scriptableManager.difficulty == ScriptableManager.Difficulty.Medium) mO.GetComponent<MailSprite>().mailRectSize = new Vector2(55, 2);
+            else if (scriptableManager.difficulty == ScriptableManager.Difficulty.Medium) mO.GetComponent<MailSprite>().mailRectSize = new Vector2(55, 1);
             mO.GetComponent<MailSprite>().SetPosition(i);
+            mO.GetComponent<MailSprite>().mailIndex = i;
         }
     }
 
     public void CheckWin()
     {
-        Debug.Log("pressed!: " + points);
-
-        if (points == mailAmount)
+        if (points > 0)
         {
             StartCoroutine(mailTrashbin.Rainbow(0));
-            Debug.Log("Wajoooo gewonnen!!11");
+        }
+        else
+        {
+            mailTrashbin.resetBin();
         }
     }
 }

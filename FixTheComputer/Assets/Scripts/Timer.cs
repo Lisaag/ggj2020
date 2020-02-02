@@ -11,15 +11,17 @@ public class Timer : MonoBehaviour
     private float currentTime = float.PositiveInfinity;
 
     [Header("References")]
+    [SerializeField] private ScriptableManager manager;
     [SerializeField] private Text text;
 
     [Header("Events")]
     [SerializeField] private UnityEvent OnStartTimer;
     [SerializeField] private UnityEvent OnMinigameFinished;
-    [SerializeField] private UnityEvent OnObjectiveFailed;
 
     public float PlayTime { get => time; set => time = value; }
     public bool TimerStarted { get; private set; } = false;
+
+    private bool wonObjective = false;
 
     private void Start()
     {
@@ -52,19 +54,15 @@ public class Timer : MonoBehaviour
         currentTime = 0;
         UpdateTextObject();
 
+        manager.win = wonObjective;
         OnMinigameFinished?.Invoke();
-        OnObjectiveFailed?.Invoke();
     }
 
     //call this method when you finish the minigame
     public void CompleteObjective()
     {
-        StopAllCoroutines();
+        //StopAllCoroutines();
+        wonObjective = true;
         TimerStarted = false;
-
-        if (currentTime > 0)
-        {
-            OnMinigameFinished?.Invoke();
-        }
     }
 }

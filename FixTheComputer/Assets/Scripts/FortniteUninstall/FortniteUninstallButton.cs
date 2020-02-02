@@ -8,7 +8,19 @@ public class FortniteUninstallButton : MonoBehaviour
     Color hoverColor;
 
     [SerializeField]
+    Color defaultColor;
+
+    [SerializeField]
     GameObject[] popUpWindows = null;
+
+    [SerializeField]
+    ScriptableManager scriptableManager;
+
+    [SerializeField]
+    public Timer timer;
+
+    [HideInInspector]
+    public int dialogAmount = 0;
 
     SpriteRenderer spriteRenderer = null;
 
@@ -21,6 +33,10 @@ public class FortniteUninstallButton : MonoBehaviour
 
     void Start()
     {
+        if (scriptableManager.difficulty == ScriptableManager.Difficulty.Easy) dialogAmount = 3;
+        else if (scriptableManager.difficulty == ScriptableManager.Difficulty.Medium) dialogAmount = 5;
+        else dialogAmount = 8;
+
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -31,7 +47,7 @@ public class FortniteUninstallButton : MonoBehaviour
 
     void OnMouseExit()
     {
-        spriteRenderer.color = Color.white;
+        spriteRenderer.color = defaultColor;
     }
 
     void OnMouseDown()
@@ -51,7 +67,6 @@ public class FortniteUninstallButton : MonoBehaviour
             if (currentIndex != index) break;
             index = Random.Range(0, popUpWindows.Length);
         }
-        Debug.Log(currentIndex + " - " + index);
 
         popUpWindows[index].gameObject.SetActive(true);
     }

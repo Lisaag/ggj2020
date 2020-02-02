@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class MailSprite : MonoBehaviour
 {
-    [SerializeField]
-    Vector2 mailRectSize;
+    public Vector2 mailRectSize;
 
     [SerializeField]
     Color hoverColor;
@@ -17,7 +16,15 @@ public class MailSprite : MonoBehaviour
     GameObject mailText;
 
     [SerializeField]
-    Color defaultColor = new Color(106 / 255, 106 / 255, 106 / 255, 1);
+    Color clickedColor;
+
+    [SerializeField]
+    Color defaultColor = new Color(0, 0, 0);
+
+    [HideInInspector]
+    public int mailIndex;
+
+    private Color currentColor;
     private int isPressed = 1;
     private PhishingGameManager phishingGameManager = null;
 
@@ -34,18 +41,20 @@ public class MailSprite : MonoBehaviour
 
     void OnMouseDown()
     {
-        if(isPressed == 1)
+        if (isPressed == 1)
         {
-            defaultColor = hoverColor;
+            currentColor = clickedColor;
             phishingGameManager.points++;
+            phishingGameManager.deleteMails[this.mailIndex] = this.gameObject;
         }
         else
         {
-            defaultColor = Color.white;
+            currentColor = defaultColor;
             phishingGameManager.points--;
+            phishingGameManager.deleteMails[this.mailIndex] = null;
         }
         isPressed *= -1;
-        spriteRenderer.color = defaultColor;
+        spriteRenderer.color = currentColor;
         phishingGameManager.CheckWin();
     }
 
@@ -59,18 +68,19 @@ public class MailSprite : MonoBehaviour
 
     void OnMouseOver()
     {
-        spriteRenderer.color = hoverColor;
+        if (isPressed == 1) spriteRenderer.color = hoverColor;
     }
 
     void OnMouseExit()
     {
-        spriteRenderer.color = defaultColor;
+        if (isPressed == 1) spriteRenderer.color = defaultColor;
+        else spriteRenderer.color = clickedColor;
     }
 
-     public void SetPosition(int index)
+    public void SetPosition(int index)
     {
         Vector3 currentPosition = this.transform.position;
-        Vector3 newPosition = new Vector3(currentPosition.x, -index * mailRectSize.y, currentPosition.z);
+        Vector3 newPosition = new Vector3(currentPosition.x + (70 - this.mailRectSize.x) / 2, -index * mailRectSize.y, currentPosition.z);
         this.transform.position = newPosition;
 
         Instantiate(mailImage, new Vector3(newPosition.x - ((this.mailRectSize.x / 2) - (mailImage.GetComponent<SpriteRenderer>().size.x / 2)), newPosition.y, newPosition.z), Quaternion.identity, this.transform);

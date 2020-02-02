@@ -5,7 +5,9 @@ using UnityEngine.Events;
 [RequireComponent(typeof(DraggableContainer))]
 public class KeyboardKey : MonoBehaviour
 {
+    [SerializeField] private ScriptableManager manager;
     [SerializeField] private Collider area;
+    [SerializeField] private ScriptableManager.Difficulty minDifficulty;
     [SerializeField] private float resetSpeed = 1000;
     [SerializeField] private float moveToCenterSpeed = 200;
 
@@ -24,6 +26,22 @@ public class KeyboardKey : MonoBehaviour
         draggableContainer.OnMouseUp += CheckForRightArea;
 
         originalPosition = transform.position;
+
+        if (manager.difficulty == ScriptableManager.Difficulty.Easy)
+        {
+            if (minDifficulty == ScriptableManager.Difficulty.Medium || 
+                minDifficulty == ScriptableManager.Difficulty.Hard)
+            {
+                transform.position = area.transform.position;
+            }
+        }
+        else if (manager.difficulty == ScriptableManager.Difficulty.Medium)
+        {
+            if (minDifficulty == ScriptableManager.Difficulty.Hard)
+            {
+                transform.position = area.transform.position;
+            }
+        }
     }
 
     private void CheckForRightArea(GameObject gameObject)
@@ -103,6 +121,13 @@ public class KeyboardKey : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         areaCollider = other;
+
+        if (other.CompareTag("IWANTDIE"))
+        {
+            Debug.Log("DIE");
+            draggableContainer.IsDragging = false;
+            CheckForRightArea(gameObject);
+        }
     }
 
     private void OnTriggerExit(Collider other)
