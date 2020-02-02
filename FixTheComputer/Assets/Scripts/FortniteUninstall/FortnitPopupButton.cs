@@ -33,8 +33,8 @@ public class FortnitPopupButton : MonoBehaviour
         {
             //LOSING CODE HERE
             this.transform.parent.gameObject.SetActive(false);
-            SceneManager.LoadScene("Bricks");
-            fub.timer.CompleteObjective();
+            SceneManager.LoadScene("InBetween");
+           // fub.timer.CompleteObjective();
             Debug.Log("You lost this micro game");
         }
     }

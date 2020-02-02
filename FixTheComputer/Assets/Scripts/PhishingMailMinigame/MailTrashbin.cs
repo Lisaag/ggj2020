@@ -56,6 +56,7 @@ public class MailTrashbin : MonoBehaviour
         Debug.Log(amountRemoved + " + " + phishingGameManager.deleteMails.Length);
         if (amountRemoved == phishingGameManager.mailAmount)
         {
+            //WINCODE HERE
             timer.CompleteObjective();
         }
         phishingGameManager.points = 0;
