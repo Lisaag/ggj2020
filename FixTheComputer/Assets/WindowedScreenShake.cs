@@ -11,6 +11,13 @@ public class WindowedScreenShake : MonoBehaviour
 
     private float temp_shake_intensity = 0;
 
+    private void Start()
+    {
+        originPosition = transform.position;
+        originPosition = transform.position;
+        originRotation = transform.rotation;
+    }
+
     void Update()
     {
         if (temp_shake_intensity > 0)
@@ -27,9 +34,6 @@ public class WindowedScreenShake : MonoBehaviour
 
     public void Shake()
     {
-        originPosition = transform.position;
-        originRotation = transform.rotation;
         temp_shake_intensity = shake_intensity;
-
     }
 }

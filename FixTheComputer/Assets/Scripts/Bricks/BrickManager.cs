@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BrickManager : MonoBehaviour
 {
     public List<GameObject> Bricks = new List<GameObject>();
+
+    public ScriptableManager gameManager;
 
     public static BrickManager instance;
 
@@ -19,17 +22,18 @@ public class BrickManager : MonoBehaviour
         else
             Destroy(this);
 
-        /*switch (true)
+        switch (gameManager.difficulty)
         {
-            case 0:
+            case ScriptableManager.Difficulty.Easy:
                 easyBricks.SetActive(true);
                 break;
-            case 1:
+            case ScriptableManager.Difficulty.Medium:
                 mediumBricks.SetActive(true);
                 break;
-            case 2:
+            case ScriptableManager.Difficulty.Hard:
                 hardBricks.SetActive(true);
-        }*/
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -37,7 +41,8 @@ public class BrickManager : MonoBehaviour
     {
         if (Bricks.Count <= 0)
         {
-            Debug.Log("Done playing");
+            gameManager.win = true;
+            SceneManager.LoadScene("InBetween");
         }
 
         for (int i = 0; i < Bricks.Count; i++)
@@ -48,13 +53,8 @@ public class BrickManager : MonoBehaviour
 
         if (lives <= 0)
         {
-            #if UNITY_EDITOR
-                        UnityEditor.EditorApplication.isPlaying = false;
-            #elif UNITY_WEBPLAYER
-                     Application.OpenURL(webplayerQuitURL);
-            #else
-                     Application.Quit();
-            #endif
+            gameManager.win = false;
+            SceneManager.LoadScene("InBetween");
         }
     }
 }

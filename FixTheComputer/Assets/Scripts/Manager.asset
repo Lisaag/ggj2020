@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 3
   difficulty: 0
+  win: 0

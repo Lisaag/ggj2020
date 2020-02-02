@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9aea8d118737a547829b92718988aa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mailRectSize: {x: 55, y: 3}
+  mailRectSize: {x: 55, y: 2}
   hoverColor: {r: 0, g: 0, b: 0, a: 1}
   mailImage: {fileID: 7637816867546456291, guid: f1def15e9b5752a4aaeb86034a5b1c4e,
     type: 3}

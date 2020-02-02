@@ -9,29 +9,33 @@ public class BallMovement : MonoBehaviour
     public Transform player;
     public WindowedScreenShake windowShake;
     public float speed;
-    [Range(1, 100)]
-    public float playerBoostEffectiveness = 100;
-    [Range(1, 100)]
-    public float playerInfluence = 100f;
 
-    private float startPos, endPos, velocity;
+    private Vector3 startPos;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        startPos = transform.position;
 
+        StartCoroutine(ResetBall());
+    }
+
+    private void Update()
+    {
+        rb.velocity = rb.velocity.normalized * speed;
+    }
+
+    IEnumerator ResetBall()
+    {
+        transform.position = startPos;
+        rb.velocity = Vector3.zero;
+        yield return new WaitForSeconds(1);
         rb.AddForce(transform.forward * speed);
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.transform == player)
-        { 
-            rb.AddForce(transform.forward * speed / (100 / playerBoostEffectiveness));
-            rb.AddForce(new Vector3(other.gameObject.GetComponent<PlayerMovement>().velocity * speed / (100 / playerInfluence), 0f, 0f));
-        }
-
         if (other.gameObject.CompareTag("Brick"))
         {
             other.gameObject.GetComponent<Brick>().RemoveLife();
@@ -41,6 +45,7 @@ public class BallMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Bottom"))
         {
             BrickManager.instance.lives--;
+            StartCoroutine(ResetBall());
         }
     }
 }

@@ -168,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startOnAwake: 1
   time: 5
+  manager: {fileID: 11400000, guid: 735130f9f9dbdcd47b911906c6d49edb, type: 2}
   text: {fileID: 9141667752467166214}
   OnStartTimer:
     m_PersistentCalls:

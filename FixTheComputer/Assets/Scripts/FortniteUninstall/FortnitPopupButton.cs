@@ -19,7 +19,7 @@ public class FortnitPopupButton : MonoBehaviour
         {
             fub.totalRightAnswers++;
 
-            if (fub.totalRightAnswers == winAmount)
+            if (fub.totalRightAnswers == fub.dialogAmount)
             {
                 //WIN CODE HERE
                 Debug.Log("You won this micro game!!");
@@ -33,7 +33,8 @@ public class FortnitPopupButton : MonoBehaviour
         {
             //LOSING CODE HERE
             this.transform.parent.gameObject.SetActive(false);
-            SceneManager.LoadScene("Bricks");
+            SceneManager.LoadScene("InBetween");
+           // fub.timer.CompleteObjective();
             Debug.Log("You lost this micro game");
         }
     }
