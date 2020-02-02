@@ -5,8 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class MainSceneButton : MonoBehaviour
 {
-    public void SwitchScene()
+    Scenemanagement scene; 
+    MusicPlayer music;
+
+    private void Start()
     {
-        SceneManager.LoadScene("TugOfWarMinigame");
+        scene = GameObject.Find("SceneManagement").GetComponent<Scenemanagement>();
+        music = GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>();
+    }
+    public void SwitchScene()
+    {        
+        music.lockSongs();
+        scene.pickScene();
     }
 }
