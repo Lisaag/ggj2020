@@ -6,6 +6,8 @@ public class BrickManager : MonoBehaviour
 {
     public List<GameObject> Bricks = new List<GameObject>();
 
+    public ScriptableManager gameManager;
+
     public static BrickManager instance;
 
     public GameObject easyBricks, mediumBricks, hardBricks;
@@ -19,17 +21,18 @@ public class BrickManager : MonoBehaviour
         else
             Destroy(this);
 
-        /*switch (true)
+        switch (gameManager.difficulty)
         {
-            case 0:
+            case ScriptableManager.Difficulty.Easy:
                 easyBricks.SetActive(true);
                 break;
-            case 1:
+            case ScriptableManager.Difficulty.Medium:
                 mediumBricks.SetActive(true);
                 break;
-            case 2:
+            case ScriptableManager.Difficulty.Hard:
                 hardBricks.SetActive(true);
-        }*/
+                break;
+        }
     }
 
     // Update is called once per frame
