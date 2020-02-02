@@ -106,6 +106,8 @@ public class LetterBehaviour : MonoBehaviour
         {
             winloseText.text = "Time's up";
             gameOver = true;
+            scriptM.lives--;
+            scriptM.win = false;
             StartCoroutine(WinOrLose(""));//TODO: Add next screen
         }
     }
