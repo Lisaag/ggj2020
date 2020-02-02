@@ -25,6 +25,6 @@ public class KeyboardManager : MonoBehaviour
             }
         }
 
-        SceneManager.LoadScene("FortniteUninstallScene");
+        SceneManager.LoadScene("InBetween");
     }
 }
