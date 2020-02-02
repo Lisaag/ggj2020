@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BrickManager : MonoBehaviour
 {
@@ -40,7 +41,8 @@ public class BrickManager : MonoBehaviour
     {
         if (Bricks.Count <= 0)
         {
-            Debug.Log("Done playing");
+            gameManager.win = true;
+            SceneManager.LoadScene("InBetween");
         }
 
         for (int i = 0; i < Bricks.Count; i++)
@@ -51,7 +53,8 @@ public class BrickManager : MonoBehaviour
 
         if (lives <= 0)
         {
-            // SceneManager.LoadScene("InbetweenScene");
+            gameManager.win = false;
+            SceneManager.LoadScene("InBetween");
         }
     }
 }

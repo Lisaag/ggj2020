@@ -109,7 +109,7 @@ public class LetterBehaviour : MonoBehaviour
             gameOver = true;
             scriptM.lives--;
             scriptM.win = false;
-            StartCoroutine(WinOrLose(""));//TODO: Add next screen
+            StartCoroutine(WinOrLose("InBetween"));//TODO: Add next screen
         }
     }
     IEnumerator WinOrLose(string nextScene)
