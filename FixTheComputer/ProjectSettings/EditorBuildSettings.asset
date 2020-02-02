@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: c7539ac53828af5408e716fb75856fad
+  - enabled: 1
     path: Assets/Scenes/WindowMinigame.unity
     guid: 6079332cacb56bb44a5729327cb7e49a
   - enabled: 1
@@ -38,7 +41,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InBetween.unity
     guid: fa69dbad4abea9f4091ec83b3dcae434
-  - enabled: 1
-    path: Assets/Scenes/Start.unity
-    guid: c7539ac53828af5408e716fb75856fad
   m_configObjects: {}
