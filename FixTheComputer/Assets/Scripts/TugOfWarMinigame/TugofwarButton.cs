@@ -51,12 +51,14 @@ public class TugofwarButton : MonoBehaviour
         rope.transform.position += new Vector3(ropeSpeed, 0f, 0f) * Time.deltaTime;
         if(rope.transform.position.x < player.transform.position.x)
         {   //TODO: Insert win action besides scene transition
-            SceneManager.LoadScene("WindowMinigame");
+            scriptM.win = true;
+            SceneManager.LoadScene("InBetween");
         }
         else if (rope.transform.position.x > virus.transform.position.x)
         {
+            scriptM.win = false;
             scriptM.lives--;
-            SceneManager.LoadScene("WindowMinigame");
+            SceneManager.LoadScene("InBetween");
         }
         this.transform.position += new Vector3(Mathf.Sin(1f * Time.time * speed), 0, 0);
     }

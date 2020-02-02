@@ -56,7 +56,6 @@ public class HookBehaviour : MonoBehaviour
     {
         foreach (GameObject go in stupidThings)
         {
-            //go.transform.position += new Vector3(0, 50f, 0);
             go.transform.localEulerAngles += new Vector3(0, 2f, 0);
         }
     }
@@ -65,14 +64,16 @@ public class HookBehaviour : MonoBehaviour
         isOverNya = true;
         if (fishiesCaught == 5)
         {
+            manager.win = true;
             goodGame.SetActive(true);
         }
         else
         {
+            manager.win = false;
             badGame.SetActive(true);
         }
         yield return new WaitForSeconds(2.5f);
-        SceneManager.LoadScene("KeyboardMinigame");
+        SceneManager.LoadScene("InBetween");
     }
     void Update()
     {
@@ -81,11 +82,6 @@ public class HookBehaviour : MonoBehaviour
             MoveEverything();
         }
 
-        //if (this.transform.localPosition.y < -25f)
-        //{
-        //    hooking = false;
-        //    this.transform.position = shootingPosition;
-        //}
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
             if (this.GetComponentInChildren<FishBehaviour>() != null || this.GetComponentInChildren<EnvelopeBehaviour>() != null)
