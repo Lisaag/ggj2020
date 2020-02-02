@@ -11,6 +11,7 @@ public class Timer : MonoBehaviour
     private float currentTime = float.PositiveInfinity;
 
     [Header("References")]
+    [SerializeField] private ScriptableManager manager;
     [SerializeField] private Text text;
 
     [Header("Events")]
@@ -52,6 +53,7 @@ public class Timer : MonoBehaviour
         currentTime = 0;
         UpdateTextObject();
 
+        manager.win = false;
         OnMinigameFinished?.Invoke();
         OnObjectiveFailed?.Invoke();
     }
@@ -64,6 +66,7 @@ public class Timer : MonoBehaviour
 
         if (currentTime > 0)
         {
+            manager.win = true;
             OnMinigameFinished?.Invoke();
         }
     }

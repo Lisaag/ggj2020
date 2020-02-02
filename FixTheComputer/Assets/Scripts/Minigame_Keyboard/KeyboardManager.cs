@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class KeyboardManager : MonoBehaviour
 {
+    [SerializeField] private ScriptableManager manager;
     [SerializeField] private List<KeyboardKey> keys;
 
     private void Start()
@@ -25,6 +26,7 @@ public class KeyboardManager : MonoBehaviour
             }
         }
 
+        manager.win = true;
         SceneManager.LoadScene("InBetween");
     }
 }
