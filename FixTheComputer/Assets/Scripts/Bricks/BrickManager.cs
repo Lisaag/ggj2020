@@ -42,6 +42,16 @@ public class BrickManager : MonoBehaviour
         if (Bricks.Count <= 0)
         {
             gameManager.win = true;
+            Scenemanagement scenemanage = GameObject.Find("SceneManagement").GetComponent<Scenemanagement>();
+            scenemanage.addLists();
+            if (gameManager.difficulty == ScriptableManager.Difficulty.Medium)
+            {
+                gameManager.difficulty = ScriptableManager.Difficulty.Hard;
+            }
+            if (gameManager.difficulty == ScriptableManager.Difficulty.Easy)
+            {
+                gameManager.difficulty = ScriptableManager.Difficulty.Medium;
+            }
             SceneManager.LoadScene("InBetween");
         }
 
@@ -54,6 +64,16 @@ public class BrickManager : MonoBehaviour
         if (lives <= 0)
         {
             gameManager.win = false;
+            Scenemanagement scenemanage = GameObject.Find("SceneManagement").GetComponent<Scenemanagement>();
+            scenemanage.addLists();
+            if (gameManager.difficulty == ScriptableManager.Difficulty.Medium)
+            {
+                gameManager.difficulty = ScriptableManager.Difficulty.Hard;
+            }
+            if (gameManager.difficulty == ScriptableManager.Difficulty.Easy)
+            {
+                gameManager.difficulty = ScriptableManager.Difficulty.Medium;
+            }
             SceneManager.LoadScene("InBetween");
         }
     }

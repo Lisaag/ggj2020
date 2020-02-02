@@ -5,7 +5,7 @@ using UnityEngine;
 public class MusicPlayer : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    public static MusicPlayer instance;
     [SerializeField]
     AudioClip billy, havana, shape, lilnas, LMFAO, mackle, post, taylor;
     public bool billylock, havanalock, shapelock, lilnaslock, LMFAOlock, macklelock, postlock, taylorlock = false;
@@ -19,12 +19,19 @@ public class MusicPlayer : MonoBehaviour
     }
     void Start()
     {
+        instance = this;
         au = GetComponent<AudioSource>();
         for (int i = 0; i < 7; i++)
 
             numbers.Add(i+1);
 
 
+        ActivateSongs();
+
+    }
+
+    public void ActivateSongs()
+    {
         billygo.SetActive(billylock);
         havanago.SetActive(havanalock);
         shapego.SetActive(shapelock);
@@ -33,7 +40,6 @@ public class MusicPlayer : MonoBehaviour
         macklego.SetActive(macklelock);
         postgo.SetActive(postlock);
         taylorgo.SetActive(taylorlock);
-
     }
 
     // Update is called once per frame
@@ -41,11 +47,23 @@ public class MusicPlayer : MonoBehaviour
     {    
     }
 
+    public void lockSongs()
+    {
+        billylock = true;
+        havanalock = true;
+        shapelock = true;
+        lilnaslock = true;
+        LMFAOlock = true;
+        macklelock = true;
+        postlock = true;
+        taylorlock = true;
+    }
+
     public void unlockSong()
     {
 
         int pickASong = Random.Range(1, numbers.Count);
-        
+
         if (pickASong == 1) { billylock = false; numbers.Remove(1); }
         if (pickASong == 2) { havanalock = false; numbers.Remove(2); }
         if (pickASong == 3) { shapelock = false; numbers.Remove(3); }
@@ -67,6 +85,7 @@ public class MusicPlayer : MonoBehaviour
     {
         if (!havanalock)
         {
+            au.Stop();
             au.clip = havana;
             au.Play();
         }
@@ -75,12 +94,14 @@ public class MusicPlayer : MonoBehaviour
     {
         if (!shapelock)
         {
+            au.Stop();
             au.clip = shape;
             au.Play();
         }
     }
     public void PlayLilNas()
     {
+        au.Stop();
         if (!lilnaslock)
         {
             au.clip = lilnas;
@@ -91,6 +112,7 @@ public class MusicPlayer : MonoBehaviour
     {
         if (!LMFAOlock)
         {
+            au.Stop();
             au.clip = LMFAO;
             au.Play();
         }
@@ -99,6 +121,7 @@ public class MusicPlayer : MonoBehaviour
     {
         if (!macklelock)
         {
+            au.Stop();
             au.clip = mackle;
             au.Play();
         }
@@ -108,6 +131,7 @@ public class MusicPlayer : MonoBehaviour
     {
         if (!postlock)
         {
+            au.Stop();
             au.clip = post;
             au.Play();
         }
@@ -116,6 +140,7 @@ public class MusicPlayer : MonoBehaviour
     {
         if (!taylorlock)
         {
+            au.Stop();
             au.clip = taylor;
             au.Play();
         }

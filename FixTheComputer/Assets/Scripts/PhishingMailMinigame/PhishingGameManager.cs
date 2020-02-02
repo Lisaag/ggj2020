@@ -16,7 +16,7 @@ public class PhishingGameManager : MonoBehaviour
     MailTrashbin mailTrashbin;
 
     [SerializeField]
-    ScriptableManager scriptableManager;
+    public ScriptableManager scriptableManager;
 
     public int points = 0;
 

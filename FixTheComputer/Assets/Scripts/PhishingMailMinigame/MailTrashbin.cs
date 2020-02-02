@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MailTrashbin : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class MailTrashbin : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.color = defaultColor;
+        phishingGameManager.scriptableManager.win = false;
     }
 
     void OnMouseOver()
@@ -57,7 +59,10 @@ public class MailTrashbin : MonoBehaviour
         if (amountRemoved == phishingGameManager.mailAmount)
         {
             //WINCODE HERE
+            phishingGameManager.scriptableManager.win = true;
             timer.CompleteObjective();
+            SceneManager.LoadScene("InBetween");
+
         }
         phishingGameManager.points = 0;
         resetBin();
