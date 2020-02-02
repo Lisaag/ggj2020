@@ -6,14 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainScreen.unity
-    guid: 59da8cf191b7a094ea6fe652307a337c
-  - enabled: 1
-    path: Assets/Scenes/InBetween.unity
-    guid: fa69dbad4abea9f4091ec83b3dcae434
-  - enabled: 1
     path: Assets/Scenes/WindowMinigame.unity
     guid: 6079332cacb56bb44a5729327cb7e49a
+  - enabled: 0
+    path: Assets/Scenes/New Scene.unity
+    guid: 64466c210535c48408b61a0dee98909e
   - enabled: 1
     path: Assets/Scenes/FishingMinigame.unity
     guid: 5b38c4aaec3975c47a00e1a58072df6d
@@ -24,15 +21,24 @@ EditorBuildSettings:
     path: Assets/Scenes/KeyboardMinigame.unity
     guid: e51c3aa4ee368244ba9da0e2bcf7062c
   - enabled: 1
-    path: Assets/Scenes/phishingMail.unity
-    guid: 11e79dac51604a545a6ae077d7e4b79c
+    path: Assets/Scenes/MainScreen.unity
+    guid: 59da8cf191b7a094ea6fe652307a337c
   - enabled: 1
     path: Assets/Scenes/PostitMinigame.unity
     guid: 06f624094e7cc31409157578763abb36
   - enabled: 1
+    path: Assets/Scenes/Bricks.unity
+    guid: 17182cf808c32124fbbdae2abfa5eddb
+  - enabled: 1
+    path: Assets/Scenes/samplescene.unity
+    guid: cbfe36cfddfde964d9dfce63a355d5dd
+  - enabled: 1
+    path: Assets/Scenes/phishingMail.unity
+    guid: e1f2fcacd860eff4eba8b16660bdb8a9
+  - enabled: 1
     path: Assets/Scenes/TugOfWarMinigame.unity
     guid: 97499b5f634a1464fb06669e2959b50a
   - enabled: 1
-    path: Assets/Scenes/Bricks.unity
-    guid: 17182cf808c32124fbbdae2abfa5eddb
+    path: Assets/Scenes/InBetween.unity
+    guid: fa69dbad4abea9f4091ec83b3dcae434
   m_configObjects: {}

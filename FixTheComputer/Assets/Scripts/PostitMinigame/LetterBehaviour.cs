@@ -86,14 +86,16 @@ public class LetterBehaviour : MonoBehaviour
                 if (!EnterAnswer())
                 {
                     winloseText.text = "Wrong answer!";
-                    StartCoroutine(WinOrLose(""));//TODO: Add next screen
+                    scriptM.win = false;
+                    StartCoroutine(WinOrLose("InBetween"));//TODO: Add next screen
                     gameOver = true;
                     scriptM.lives--;
                     return;
                 }
+                scriptM.win = true;
                 winloseText.text = "Good job!";
                 gameOver = true;
-                StartCoroutine(WinOrLose("")); //TODO: Add next screen
+                StartCoroutine(WinOrLose("InBetween")); //TODO: Add next screen
 
             }
         }
@@ -104,6 +106,8 @@ public class LetterBehaviour : MonoBehaviour
         {
             winloseText.text = "Time's up";
             gameOver = true;
+            scriptM.lives--;
+            scriptM.win = false;
             StartCoroutine(WinOrLose(""));//TODO: Add next screen
         }
     }
@@ -111,7 +115,7 @@ public class LetterBehaviour : MonoBehaviour
     {
         winloseText.gameObject.SetActive(true);
         yield return new WaitForSeconds(2f);
-        //SceneManager.LoadScene(nextScene);
+        SceneManager.LoadScene(nextScene);
     }
     bool EnterAnswer()
     {

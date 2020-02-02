@@ -6,7 +6,7 @@ public class ScriptableManager : ScriptableObject
 {
     public int lives;
     public Difficulty difficulty;
-
+    public bool win;
     public enum Difficulty
     {
         Easy,
