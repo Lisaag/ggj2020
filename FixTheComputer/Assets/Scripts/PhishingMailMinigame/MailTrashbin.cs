@@ -16,6 +16,9 @@ public class MailTrashbin : MonoBehaviour
     [SerializeField]
     PhishingGameManager phishingGameManager;
 
+    [SerializeField]
+    Timer timer;
+
     private SpriteRenderer spriteRenderer;
 
     void Start()
@@ -53,7 +56,7 @@ public class MailTrashbin : MonoBehaviour
         Debug.Log(amountRemoved + " + " + phishingGameManager.deleteMails.Length);
         if (amountRemoved == phishingGameManager.mailAmount)
         {
-            Debug.Log("gewonnen jo");
+            timer.CompleteObjective();
         }
         phishingGameManager.points = 0;
         resetBin();

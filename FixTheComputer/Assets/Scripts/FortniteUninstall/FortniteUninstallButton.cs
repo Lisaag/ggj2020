@@ -16,6 +16,9 @@ public class FortniteUninstallButton : MonoBehaviour
     [SerializeField]
     ScriptableManager scriptableManager;
 
+    [SerializeField]
+    public Timer timer;
+
     [HideInInspector]
     public int dialogAmount = 0;
 
@@ -64,7 +67,6 @@ public class FortniteUninstallButton : MonoBehaviour
             if (currentIndex != index) break;
             index = Random.Range(0, popUpWindows.Length);
         }
-        Debug.Log(currentIndex + " - " + index);
 
         popUpWindows[index].gameObject.SetActive(true);
     }

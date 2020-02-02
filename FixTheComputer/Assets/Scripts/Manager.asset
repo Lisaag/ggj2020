@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Manager
   m_EditorClassIdentifier: 
   lives: 3
-  difficulty: 1
+  difficulty: 0
+  win: 0
