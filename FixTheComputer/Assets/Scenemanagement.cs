@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Scenemanagement : MonoBehaviour
 {
-    List<string> scenees = new List<string>();
+    public static Scenemanagement instance;
 
-
+    public List<string> scenees = new List<string>();
+    public bool firstLevel = true;
+    public string scene;
 
     private void Awake()
     {
@@ -16,6 +18,7 @@ public class Scenemanagement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         addLists();
     }
 
@@ -39,15 +42,23 @@ public class Scenemanagement : MonoBehaviour
 
     public void pickScene()
     {
+        if (firstLevel)
+        {
+            firstLevel = false;
+            SceneManager.LoadScene("MainScreen");
+        }
+
         if (scenees.Count > 3)
         {
-            string scene = scenees[Random.Range(0, scenees.Count)];
             {
-                SceneManager.LoadScene(scene);
+                scene = scenees[Random.Range(0, scenees.Count)];                
                 scenees.Remove(scene);
+                SceneManager.LoadScene(scene);
             }
         }
+        
         else
-            SceneManager.LoadScene("Bricks");
+        SceneManager.LoadScene("Bricks");
+
     }
 }

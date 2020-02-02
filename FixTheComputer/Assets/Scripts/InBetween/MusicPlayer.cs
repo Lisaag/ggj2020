@@ -5,7 +5,7 @@ using UnityEngine;
 public class MusicPlayer : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    public static MusicPlayer instance;
     [SerializeField]
     AudioClip billy, havana, shape, lilnas, LMFAO, mackle, post, taylor;
     public bool billylock, havanalock, shapelock, lilnaslock, LMFAOlock, macklelock, postlock, taylorlock = false;
@@ -19,6 +19,7 @@ public class MusicPlayer : MonoBehaviour
     }
     void Start()
     {
+        instance = this;
         au = GetComponent<AudioSource>();
         for (int i = 0; i < 7; i++)
 
@@ -39,6 +40,18 @@ public class MusicPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {    
+    }
+
+    public void lockSongs()
+    {
+        billylock = true;
+        havanalock = true;
+        shapelock = true;
+        lilnaslock = true;
+        LMFAOlock = true;
+        macklelock = true;
+        postlock = true;
+        taylorlock = true;
     }
 
     public void unlockSong()
