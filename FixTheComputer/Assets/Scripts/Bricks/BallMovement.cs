@@ -38,6 +38,10 @@ public class BallMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Brick"))
         {
+            GameObject temp = new GameObject("temp");
+            AudioSource tempS = temp.AddComponent<AudioSource>();
+            tempS.volume = other.gameObject.GetComponent<AudioSource>().volume;
+            tempS.PlayOneShot(other.gameObject.GetComponent<AudioSource>().clip);
             other.gameObject.GetComponent<Brick>().RemoveLife();
             windowShake.Shake();
         }
