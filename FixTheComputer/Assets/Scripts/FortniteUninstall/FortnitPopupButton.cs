@@ -19,7 +19,7 @@ public class FortnitPopupButton : MonoBehaviour
         {
             fub.totalRightAnswers++;
 
-            if (fub.totalRightAnswers == winAmount)
+            if (fub.totalRightAnswers == fub.dialogAmount)
             {
                 //WIN CODE HERE
                 Debug.Log("You won this micro game!!");

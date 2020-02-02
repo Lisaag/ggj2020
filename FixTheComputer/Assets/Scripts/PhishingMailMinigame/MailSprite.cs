@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class MailSprite : MonoBehaviour
 {
-    [SerializeField]
-    Vector2 mailRectSize;
+    public Vector2 mailRectSize;
 
     [SerializeField]
     Color hoverColor;

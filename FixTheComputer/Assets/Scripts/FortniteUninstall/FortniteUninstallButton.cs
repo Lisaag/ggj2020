@@ -13,6 +13,12 @@ public class FortniteUninstallButton : MonoBehaviour
     [SerializeField]
     GameObject[] popUpWindows = null;
 
+    [SerializeField]
+    ScriptableManager scriptableManager;
+
+    [HideInInspector]
+    public int dialogAmount = 0;
+
     SpriteRenderer spriteRenderer = null;
 
     private bool hasClicked = false;
@@ -24,6 +30,10 @@ public class FortniteUninstallButton : MonoBehaviour
 
     void Start()
     {
+        if (scriptableManager.difficulty == ScriptableManager.Difficulty.Easy) dialogAmount = 3;
+        else if (scriptableManager.difficulty == ScriptableManager.Difficulty.Medium) dialogAmount = 5;
+        else dialogAmount = 8;
+
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 

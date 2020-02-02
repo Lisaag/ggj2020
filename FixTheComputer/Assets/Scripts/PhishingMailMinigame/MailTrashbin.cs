@@ -42,13 +42,16 @@ public class MailTrashbin : MonoBehaviour
         {
             if (o[i] == null)
             {
-                amountRemoved++;
                 continue;
+            }
+            else
+            {
+                amountRemoved++;
             }
             o[i].SetActive(false);
         }
-
-        if (amountRemoved == 0)
+        Debug.Log(amountRemoved + " + " + phishingGameManager.deleteMails.Length);
+        if (amountRemoved == phishingGameManager.mailAmount)
         {
             Debug.Log("gewonnen jo");
         }
