@@ -8,6 +8,9 @@ public class FortniteUninstallButton : MonoBehaviour
     Color hoverColor;
 
     [SerializeField]
+    Color defaultColor;
+
+    [SerializeField]
     GameObject[] popUpWindows = null;
 
     SpriteRenderer spriteRenderer = null;
@@ -31,7 +34,7 @@ public class FortniteUninstallButton : MonoBehaviour
 
     void OnMouseExit()
     {
-        spriteRenderer.color = Color.white;
+        spriteRenderer.color = defaultColor;
     }
 
     void OnMouseDown()
