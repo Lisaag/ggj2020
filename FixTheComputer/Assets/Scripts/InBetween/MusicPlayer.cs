@@ -63,7 +63,7 @@ public class MusicPlayer : MonoBehaviour
     {
 
         int pickASong = Random.Range(1, numbers.Count);
-        
+
         if (pickASong == 1) { billylock = false; numbers.Remove(1); }
         if (pickASong == 2) { havanalock = false; numbers.Remove(2); }
         if (pickASong == 3) { shapelock = false; numbers.Remove(3); }
@@ -85,6 +85,7 @@ public class MusicPlayer : MonoBehaviour
     {
         if (!havanalock)
         {
+            au.Stop();
             au.clip = havana;
             au.Play();
         }
@@ -93,12 +94,14 @@ public class MusicPlayer : MonoBehaviour
     {
         if (!shapelock)
         {
+            au.Stop();
             au.clip = shape;
             au.Play();
         }
     }
     public void PlayLilNas()
     {
+        au.Stop();
         if (!lilnaslock)
         {
             au.clip = lilnas;
@@ -109,6 +112,7 @@ public class MusicPlayer : MonoBehaviour
     {
         if (!LMFAOlock)
         {
+            au.Stop();
             au.clip = LMFAO;
             au.Play();
         }
@@ -117,6 +121,7 @@ public class MusicPlayer : MonoBehaviour
     {
         if (!macklelock)
         {
+            au.Stop();
             au.clip = mackle;
             au.Play();
         }
@@ -126,6 +131,7 @@ public class MusicPlayer : MonoBehaviour
     {
         if (!postlock)
         {
+            au.Stop();
             au.clip = post;
             au.Play();
         }
@@ -134,6 +140,7 @@ public class MusicPlayer : MonoBehaviour
     {
         if (!taylorlock)
         {
+            au.Stop();
             au.clip = taylor;
             au.Play();
         }
