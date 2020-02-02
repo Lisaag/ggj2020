@@ -51,13 +51,7 @@ public class BrickManager : MonoBehaviour
 
         if (lives <= 0)
         {
-            #if UNITY_EDITOR
-                        UnityEditor.EditorApplication.isPlaying = false;
-            #elif UNITY_WEBPLAYER
-                     Application.OpenURL(webplayerQuitURL);
-            #else
-                     Application.Quit();
-            #endif
+            // SceneManager.LoadScene("InbetweenScene");
         }
     }
 }
