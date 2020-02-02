@@ -95,6 +95,7 @@ public class LetterBehaviour : MonoBehaviour
                 scriptM.win = true;
                 winloseText.text = "Good job!";
                 gameOver = true;
+                timer.CompleteObjective();
                 StartCoroutine(WinOrLose("InBetween")); //TODO: Add next screen
 
             }
