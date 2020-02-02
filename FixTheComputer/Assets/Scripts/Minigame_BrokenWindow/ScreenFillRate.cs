@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ScreenFillRate : MonoBehaviour
@@ -73,7 +74,9 @@ public class ScreenFillRate : MonoBehaviour
             //if (completelyFilled)
             if (FillRatio > requiredFillRatio) 
             {
-                timer.CompleteObjective();
+                manager.win = true;
+                SceneManager.LoadScene("InBetween");
+                //timer.CompleteObjective();
             }
         }
     } 
