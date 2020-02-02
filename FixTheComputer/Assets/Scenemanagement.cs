@@ -48,7 +48,7 @@ public class Scenemanagement : MonoBehaviour
             SceneManager.LoadScene("MainScreen");
         }
 
-        if (scenees.Count > 3)
+        else if (scenees.Count > 3)
         {
             {
                 scene = scenees[Random.Range(0, scenees.Count)];                

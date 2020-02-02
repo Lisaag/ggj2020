@@ -26,6 +26,12 @@ public class MusicPlayer : MonoBehaviour
             numbers.Add(i+1);
 
 
+        ActivateSongs();
+
+    }
+
+    public void ActivateSongs()
+    {
         billygo.SetActive(billylock);
         havanago.SetActive(havanalock);
         shapego.SetActive(shapelock);
@@ -34,7 +40,6 @@ public class MusicPlayer : MonoBehaviour
         macklego.SetActive(macklelock);
         postgo.SetActive(postlock);
         taylorgo.SetActive(taylorlock);
-
     }
 
     // Update is called once per frame
