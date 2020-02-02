@@ -103,6 +103,13 @@ public class KeyboardKey : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         areaCollider = other;
+
+        if (other.CompareTag("IWANTDIE"))
+        {
+            Debug.Log("DIE");
+            draggableContainer.IsDragging = false;
+            CheckForRightArea(gameObject);
+        }
     }
 
     private void OnTriggerExit(Collider other)

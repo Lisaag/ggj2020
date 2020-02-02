@@ -12,7 +12,7 @@ public class DraggableContainer : MonoBehaviour
     private Vector3 screenPoint;
     private Vector3 offset;
 
-    private bool isDragging = false;
+    public bool IsDragging { get; set; } = false;
 
     public bool LockDragging { get; set; } = false;
 
@@ -33,7 +33,7 @@ public class DraggableContainer : MonoBehaviour
         {
             screenPoint = Camera.main.WorldToScreenPoint(transform.position);
 
-            isDragging = true;
+            IsDragging = true;
         }
     }
 
@@ -53,7 +53,7 @@ public class DraggableContainer : MonoBehaviour
                     offset = transform.position -
                         Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
 
-                    isDragging = true;
+                    IsDragging = true;
 
                     audioSource?.Play();
                 }
@@ -61,11 +61,11 @@ public class DraggableContainer : MonoBehaviour
                 if (Input.GetMouseButtonUp(0))
                 {
                     OnMouseUp?.Invoke(gameObject);
-                    isDragging = false;
+                    IsDragging = false;
                 }
             }
 
-            if (isDragging)
+            if (IsDragging)
             {
                 Vector3 newScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
                 Vector3 newPosition = Camera.main.ScreenToWorldPoint(newScreenPoint);
